@@ -296,6 +296,34 @@ huggingface-cli download microsoft/bitnet-b1.58-2B-4T-bf16 --local-dir ./models/
 # Convert to gguf model
 python ./utils/convert-helper-bitnet.py ./models/bitnet-b1.58-2B-4T-bf16
 ```
+### Running as Local Server
+```
+./build/bin/llama-server \
+  -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf
+```
+### Running using Python script (OpenAI Compatible)
+```
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="http://localhost:8080/v1",
+    api_key="dummy"
+)
+
+stream = client.chat.completions.create(
+    model="bitnet",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant"},
+        {"role": "user", "content": "Write an essay for 2000 words about Generative AI"}
+    ],
+    stream=True,
+)
+
+for chunk in stream:
+    delta = chunk.choices[0].delta.content or ""
+    print(delta, end="", flush=True)
+    full_text += delta
+```
 
 ### FAQ (Frequently Asked Questions)📌 
 

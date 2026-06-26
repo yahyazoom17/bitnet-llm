@@ -331,4 +331,5 @@ Import-Module "C:\Program Files\Microsoft Visual Studio\2022\Professional\Common
 
 These steps will initialize your environment and allow you to use the correct Visual Studio tools.
 
-## Refer to the official repo from Microsoft for more details: (microsoft/BitNet)[https://github.com/microsoft/BitNet]
+## Refer to the official repo from Microsoft for more details:
+(microsoft/BitNet)[https://github.com/microsoft/BitNet]

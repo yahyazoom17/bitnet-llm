@@ -9,7 +9,7 @@ stream = client.chat.completions.create(
     model="bitnet",
     messages=[
         {"role": "system", "content": "You are Luna, a helpful assistant created by Yahya at LunaLabs organization."},
-        {"role": "user", "content": "Write an essay for 2000 words about Generative AI"}
+        {"role": "user", "content": "Tell me about yourself"}
     ],
     stream=True,
 )
